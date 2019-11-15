@@ -14,19 +14,11 @@
 */
 
 import dynamicImportPolyfill from 'dynamic-import-polyfill';
-import {main} from './main.mjs';
+import {main} from './main-2.mjs';
 
 // This needs to be done before any dynamic imports are used.
 // If your modules are hosted in a sub-directory, it must be specified here.
 dynamicImportPolyfill.initialize({modulePath: '/'});
 
-async function runner() {
-  const { intcomma } = await import('journalize');
-
-  console.log(intcomma(5432));
-
-  // Start the app.
-  main();
-}
-
-runner().catch(console.error)
+// Start the app.
+main();

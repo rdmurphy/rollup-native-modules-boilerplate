@@ -82,7 +82,7 @@
     </footer>
   </main>
 
-  <script type="module" src="{{ manifest.main }}"></script>
+  <script type="module" src="{{ manifest['main-module'] }}"></script>
   {% if ENV == 'production' %}
     <script nomodule src="{{ manifest.nomodule }}"></script>
   {% endif %}

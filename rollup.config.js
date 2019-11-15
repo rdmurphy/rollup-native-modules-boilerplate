@@ -123,14 +123,12 @@ function basePlugins({nomodule = false} = {}) {
 
 // Module config for <script type="module">
 const moduleConfig = {
-  input: {
-    'main': 'src/main-module.mjs',
-  },
+  input: ['src/main-module.mjs', 'src/main-module-2.mjs'],
   output: {
     dir: pkg.config.publicDir,
     format: 'esm',
     entryFileNames: '[name]-[hash].mjs',
-    chunkFileNames: '[name]-[hash].mjs',
+    chunkFileNames: 'chunks/[name]-[hash].mjs',
     dynamicImportFunction: '__import__',
   },
   plugins: [
